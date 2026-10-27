@@ -1,0 +1,9 @@
+# Do obrazu Dockeru nepatří zálohy, stará kopie kódu, instalátor ani data.
+src
+instalator
+**/*.bak-*
+**/*.bak
+**/.env
+**/data/*
+!app/data/jmri_decoders.db
+.git

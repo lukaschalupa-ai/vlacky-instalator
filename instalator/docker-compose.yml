@@ -1,0 +1,24 @@
+# Vláčky – instalační balíček (obecný Docker: Windows, Linux, Synology).
+# Nastavení se čte ze souboru .env ve stejné složce (vytvoří ho instalační průvodce).
+# Sestavení probíhá z nadřazené složky (tam je Dockerfile a složka app).
+version: "3"
+
+services:
+  vlacky:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    image: vlacky:local
+    container_name: ${VLACKY_NAME:-vlacky}
+    restart: unless-stopped
+    ports:
+      - "${VLACKY_PORT:-8090}:8000"
+    environment:
+      - TZ=${VLACKY_TZ:-Europe/Prague}
+      - DB_PATH=/data/vlacky.db
+      # Úvodní heslo. Po změně hesla v aplikaci (Nastavení) se tato hodnota ignoruje.
+      - APP_PASSWORD=${APP_PASSWORD}
+      - APP_NAME=${APP_NAME:-Vláčky}
+    volumes:
+      # Tady jsou VŠECHNA tvoje data (databáze, fotky, přílohy, zálohy, nastavení).
+      - ${VLACKY_DATA:-./data}:/data

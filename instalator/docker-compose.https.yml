@@ -1,0 +1,11 @@
+# Volitelné rozšíření: HTTPS přímo v aplikaci (potřebuješ soubory fullchain.pem a privkey.pem).
+# Použije se automaticky, když v .env nastavíš VLACKY_CERT_DIR (průvodce se na to zeptá).
+version: "3"
+
+services:
+  vlacky:
+    environment:
+      - SSL_CERT=/certs/fullchain.pem
+      - SSL_KEY=/certs/privkey.pem
+    volumes:
+      - ${VLACKY_CERT_DIR}:/certs:ro

@@ -1,0 +1,23 @@
+Vláčky – licence a použité součásti třetích stran
+==================================================
+
+1) Knihovna dekodérů JMRI (soubor app/data/jmri_decoders.db)
+   Obsahuje data převzatá z definic dekodérů projektu JMRI (soubory xml/decoders,
+   https://github.com/JMRI/JMRI). JMRI je šířeno pod licencí GNU GPL verze 2
+   (https://www.gnu.org/licenses/old-licenses/gpl-2.0.html).
+   Databáze vznikla automatickým převodem těchto XML souborů (skript jmri2vlacky.py)
+   a je odvozeným dílem. Kdo balíček dále šíří, musí:
+     - zachovat toto oznámení a odkaz na zdroj (JMRI, https://www.jmri.org),
+     - dát příjemcům stejná práva podle GPL v2 k této databázi,
+     - na požádání poskytnout zdrojová data (jsou veřejně na GitHubu JMRI).
+   „JMRI“ je ochranná známka svých držitelů; aplikace Vláčky není s projektem JMRI spojena.
+
+2) jsQR 1.4.0 (app/static/jsQR.js) – čtečka QR kódů, licence Apache 2.0,
+   https://github.com/cozmo/jsQR
+
+3) Python balíčky (FastAPI, Uvicorn, python-multipart, Pillow, segno) se při sestavení
+   stáhnou z PyPI a mají vlastní licence (MIT/BSD/HPND).
+
+4) Písma Barlow a Barlow Condensed se načítají z Google Fonts (licence SIL OFL).
+
+Tento soubor není právní poradenství.
